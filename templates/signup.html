@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form method="POST">
+            <label>First Name:</label>
+            <input type="text" name="first_name" required>
+            <label>Last Name:</label>
+            <input type="text" name="last_name" required>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('signin') }}">Sign In</a></p>
+        {% if warnings %}
+            <div class="alert danger">
+                <ul>
+                    {% for warning in warnings %}
+                        <li>{{ warning }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

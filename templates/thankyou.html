@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Signing Up!</h1>
+        <p>Your account has been created successfully.</p>
+        <p>Already have an account? <a href="{{ url_for('signin') }}">Sign In</a></p>
+    </div>
+</body>
+</html>
